@@ -1,6 +1,5 @@
-# Drone Downwash Sensing - Research Log
-
-## Research Question
+  Drone Downwash Sensing - Research Log
+Research Question
 
 Can a drone identify the geometry and properties of nearby surfaces by sensing how its own propeller downwash reflects back, using only onboard sensors (barometer, IMU, motor telemetry) and no external cameras or additional hardware?
 
@@ -8,9 +7,9 @@ This work extends [Tagliabue et al. (2023)](https://www.nature.com/articles/s441
 
 ---
 
-## Meeting Notes
+   Meeting Notes
 
-### Meeting 1 - with Neelay
+    Meeting 1
 
 Action items:
 - Message Steve for drone license (done, taking next steps)
@@ -34,30 +33,27 @@ Project direction confirmed:
 
 ---
 
-## Technical Details
+   Technical Details
 
-### Core concept
+    Core concept
 When a drone hovers near a surface, its propeller downwash hits that surface and reflects back. The reflected airflow pushes on the drone differently depending on the geometry below. A flat floor reflects air straight back up, a corner creates recirculation, a gap lets air pass through, a curved surface deflects it sideways. These differences show up as measurable changes in thrust force, barometric pressure, and drone acceleration/tilt.
 
-### Physics foundation
+    Physics foundation
 - Drone downwash can be approximated as a turbulent jet, a well-studied fluid dynamics model with predictable velocity and force profiles at different distances
 - Ground effect increases thrust when a rotor is near a surface (characterized by the ratio of hover height to rotor diameter)
 - Momentum theory provides the simplified framework for relating rotor thrust to induced airflow velocity
 
-### Drone platform
+    Drone platform
 - [ModalAI Starling 2 Max](https://docs.modalai.com/starling-2-max/)
 - STEP file available for 3D modeling in ANSYS
 
-### Sensors of interest (already onboard)
+    Sensors of interest (already onboard)
 - Barometer: measures air pressure changes from reflected downwash
 - IMU (Inertial Measurement Unit): accelerometer and gyroscope that detect changes in acceleration, tilt, and vibration caused by aerodynamic interaction
-- Motor telemetry: RPM and current draw from the ESCs, which change as the flight controller compensates for external aerodynamic forces
+- Motor telemetry: 
 
-### Simulation tool
-- ANSYS Fluent (CFD) for modeling airflow around a rotor near different surface geometries
-- Start with ANSYS Student edition, check with Neelay about full CMU license for larger mesh sizes
 
-### Motor test stand
+    Motor test stand
 - Located in the RIC
 - A single motor and propeller mounted on a stand with a load cell (sensor that measures thrust force)
 - Plan: point the prop downward, spin at fixed RPM, vary distance to a surface, and record how force and pressure change
@@ -65,7 +61,7 @@ When a drone hovers near a surface, its propeller downwash hits that surface and
 
 ---
 
-## What I've Done So Far
+   What I've Done So Far
 
 - [x] Messaged Steve about drone license
 - [x] Read about ground effect, built basic understanding
@@ -73,20 +69,17 @@ When a drone hovers near a surface, its propeller downwash hits that surface and
 - [x] Created GitHub repo
 - [ ] Read momentum theory chapter (pg 58+) from helicopter textbook
 - [ ] Read Nature paper methodology in detail
-- [ ] Downloaded ANSYS Student
 - [ ] Visited RIC and seen the motor test stand in person
 - [ ] Coordinated with Mark on 3D-printed stand
 
 ---
 
-## Next Steps
+   Next Steps
 
 This week:
 1. Read the Nature paper carefully, focus on their methodology: how they measured thrust changes, what sensors they used, what their signal processing pipeline looked like
 2. Read momentum theory chapter, understand how induced velocity relates to thrust and hover height, and the ground effect correction factor
-3. Download ANSYS Student and run a basic tutorial (just get familiar with the interface, meshing, and setting up a simple airflow problem)
-4. Ask Neelay about full ANSYS license through CMU
-5. Visit RIC, see the motor test stand, check what instrumentation it already has (load cell? data logging?), coordinate with Mark
+3. Visit RIC, see the motor test stand, check what instrumentation it already has (load cell? data logging?), coordinate with Mark
 
 Next 1-2 weeks:
 1. Run a simple ANSYS simulation: single rotor disc above a flat surface at 3 different heights, confirm you can see ground effect in the simulation before adding complexity
