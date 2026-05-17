@@ -92,3 +92,29 @@ Later:
 - Extend from single-rotor to multi-rotor analysis
 - Surface material classification (beyond geometry)
 - Object manipulation and characterization through downwash
+
+
+Currently working on:
+- designing the attachment for the motor test stand 
+- done reading momentum theory
+    - Summary of momentum theory -
+            1. Thrust = how hard you push air down
+            The rotor pushes air down. By Newton's 3rd law, the air pushes
+            the drone up. More air moved faster = more thrust.
+            Equation 2.7: T = mass flow rate x wake velocity
+            2. Bigger rotor = less effort to hover
+            The induced velocity (how fast air moves at the rotor) depends on
+            thrust divided by disk area. Bigger disk = slower air needed for
+            the same thrust = less power wasted.
+            Equation 2.15: v = sqrt( T / (2 x air density x disk area) )
+            3. Pressure jumps across the rotor disk
+            Just above the rotor: pressure drops (air is being sucked in).
+            Just below: pressure spikes (air is being pushed out).
+            Equation 2.20: pressure jump = thrust / disk area
+- Side task - Calculate center of Mass for starling 2 max.
+
+Next tasks: 
+- verify design for attachment
+- 3D print the attachment
+- read the nature paper
+  
