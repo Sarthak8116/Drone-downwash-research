@@ -117,4 +117,11 @@ Next tasks:
 - verify design for attachment
 - 3D print the attachment
 - read the nature paper
+
+Tasks for this week 25th May - 1st June
+- Complete the moment of inertia matrix
+- Design the 3d parts again for starling 2 and starling 2 max
+- do your motor test stand tests
+- Write down the derivation - think further
+- training to use the 3D printer
   
